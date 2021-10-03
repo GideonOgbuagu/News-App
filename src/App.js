@@ -12,8 +12,8 @@ function App(props) {
       setNews(e.target.value);
   }
 
-  const filterArticles = props.results.filter(article => {
-    return article.title.toLowerCase().includes(news.toLowerCase());  
+  const filterArticles = props.results.filter(result => {
+    return result.title.toLowerCase().includes(news.toLowerCase());  
 
 })
 
