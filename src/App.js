@@ -17,7 +17,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <h1 className="App-heading">New York Times</h1>
+      <h1 className="App-heading">New York Times News</h1>
       <News stories={filteredStories} searchChange={handleChange} news={news}/>
     </div>
   );
