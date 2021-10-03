@@ -5,7 +5,7 @@ import News from "./components/News";
 
 function App(props) {
   const [news, setNews] = useState("");
-  console.log(props, "Checking Props")
+  console.log(props, "Checking Props= App.js")
 
   const handleChange = (e) => {
     setNews(e.target.value);

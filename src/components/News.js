@@ -7,11 +7,12 @@ import "./News.css";
 import SearchNews from "./SearchNews";
 
 const News = (props) => {
+  console.log(props, "Checking Props= News.js")
   return (
     <div className="news-wrapper">
       <div className="fetch-search-container">
         <div className="fetch-wrapper">
-          <Link to
+          <Link to="/us-news"
             className="nav-button"
             onClick={(e) => {
               e.preventDefault();
@@ -20,16 +21,16 @@ const News = (props) => {
           >
             US News
           </Link>
-          <Link to
+          <Link to="/world-news"
             className="nav-button"
             onClick={(e) => {
               e.preventDefault();
-              props.fetchNews();
+              props.fetchWorldNews();
             }}
           >
             World News
           </Link>
-          <Link to
+          <Link to="/science-news"
             className="nav-button"
             onClick={(e) => {
               e.preventDefault();
@@ -38,7 +39,7 @@ const News = (props) => {
           >
             Science News
           </Link>
-          <Link to
+          <Link to="/arts-news"
             className="nav-button"
             onClick={(e) => {
               e.preventDefault();
@@ -47,7 +48,7 @@ const News = (props) => {
           >
             Arts News
           </Link>
-          <Link to
+          <Link to="/home-news"
             className="nav-button"
             onClick={(e) => {
               e.preventDefault();
