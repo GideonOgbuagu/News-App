@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { connect } from 'react-redux';
+import { fetchNews } from './actions/newsActions';
+import News from './components/News'
 
-function App() {
+function App(props) {
+  const [news, setNews] = useState('');
+
+
+  const handleChange = (e) => {
+      setNews(e.target.value);
+  }
+
+  const filterArticles = props.results.filter(article => {
+    return article.title.toLowerCase().includes(news.toLowerCase());  
+
+})
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="App-heading">New York Times</h1>
+      <News articles={filterArticles} searchChange={handleChange} news={news} fetchNews={props.fetchNews}/>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+      results: state.results,
+      isLoading: state.isLoading
+  }
+}
+
+// const mapDispatchToProps = () => {
+//     fetchNews()
+// }
+
+export default connect(mapStateToProps, {fetchNews})(App);
