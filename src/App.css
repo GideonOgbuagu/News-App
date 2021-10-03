@@ -4,6 +4,10 @@
 }
 
 .App-heading {
+  letter-spacing: -0.3rem;
+  word-spacing: -0.1rem;
   font-size: 4rem;
   margin-top: 30px;
 }
+
+

@@ -18,3 +18,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+p, span, button, a {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(29, 29, 29);
+  font-weight: 400;
+}

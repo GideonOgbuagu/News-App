@@ -7,9 +7,11 @@
   margin: 0 auto;
   /* border: 1px solid red; */
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
-.div1 {
+.fetch-wrapper {
+  display: flex;
+  justify-content: space-evenly;
   width: 49%;
   /* border: 1px solid blue; */
 }
@@ -21,14 +23,17 @@
   flex-direction: row-reverse;
 
 }
-.button {
-  margin-top: 30px;
+.nav-button {
+  margin-top: 50px;
   /* border: 1px solid black; */
+  height: 40px;
   font-weight: 600;
   padding: 10px 10px;
   cursor: pointer;
   outline: none;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  opacity: 9;
 }
 /* .button:hover {
   background-color: rgb(53, 53, 53);

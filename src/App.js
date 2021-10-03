@@ -1,39 +1,41 @@
-import React, { useState } from 'react';
-import './App.css';
-import { connect } from 'react-redux';
-import { fetchNews } from './actions/newsActions';
-import News from './components/News'
+import React, { useState } from "react";
+import "./App.css";
+import { connect } from "react-redux";
+import News from "./components/News";
 
 function App(props) {
-  const [news, setNews] = useState('');
-
+  const [news, setNews] = useState("");
+  console.log(props, "Checking Props")
 
   const handleChange = (e) => {
-      setNews(e.target.value);
-  }
+    setNews(e.target.value);
+  };
 
-  const filterArticles = props.results.filter(result => {
-    return result.title.toLowerCase().includes(news.toLowerCase());  
-
-})
+  const filteredStories = props.stories.filter((story) => {
+    return story.title.toLowerCase().includes(news.toLowerCase());
+  });
 
   return (
     <div className="App">
       <h1 className="App-heading">New York Times</h1>
-      <News articles={filterArticles} searchChange={handleChange} news={news} fetchNews={props.fetchNews}/>
+      <News stories={filteredStories} searchChange={handleChange} news={news}/>
     </div>
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-      results: state.results,
-      isLoading: state.isLoading
-  }
-}
+    stories: state.stories,
+    isLoading: state.isLoading,
+  };
+};
 
-// const mapDispatchToProps = () => {
-//     fetchNews()
-// }
+// const mapDispatchToProps = {
+//   fetchUsNews,
+//   fetchWorldNews,
+//   fetchScienceNews,
+//   fetchArtsNews,
+//   fetchHomeNews,
+// };
 
-export default connect(mapStateToProps, {fetchNews})(App);
+export default connect(mapStateToProps)(App);

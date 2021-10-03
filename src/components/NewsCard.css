@@ -14,13 +14,13 @@
   cursor: pointer;
 }
 .article-container {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Nunito', san-serif;
   text-align: left;
 }
 
 .heading {
-  font-family: 'Playfair Display', serif;
   /* color: rgb(34, 34, 34); */
+  font-family: 'Nunito', sans-serif;
   font-size: 1.7rem;
   padding: 8px 0;
 }

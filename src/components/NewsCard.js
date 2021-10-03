@@ -15,7 +15,7 @@ const NewsCard = (props) => {
             <div className="article-container">
                 <h2 className="heading">{props.article.title}</h2>
                 <div className="author-container">
-                    <span>Author(s): {props.article.byline}</span><span>{props.article.created_date}</span>
+                    <span>{props.article.byline}</span><span>{props.article.created_date}</span>
                 </div>
                 <div className="news-text">
                     <p>{props.article.abstract}</p>
