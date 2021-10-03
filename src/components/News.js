@@ -43,7 +43,7 @@ const News = (props) => {
             className="nav-button"
             onClick={(e) => {
               e.preventDefault();
-              props.fetchNews();
+              props.fetchArtsNews();
             }}
           >
             Arts News
