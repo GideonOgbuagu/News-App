@@ -5,17 +5,20 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import reportWebVitals from "./reportWebVitals";
-import thunk from 'redux-thunk';
+import thunk from "redux-thunk";
 import { newsReducers } from "./reducers/newsReducers";
+import { BrowserRouter } from "react-router-dom";
 
 const store = createStore(newsReducers, applyMiddleware(thunk));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

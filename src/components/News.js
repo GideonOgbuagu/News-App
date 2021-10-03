@@ -4,7 +4,6 @@ import "./News.css";
 import SearchNews from "./SearchNews";
 
 const News = (props) => {
-  console.log(props, "hiiiii");
   return (
     <div className="news-wrapper">
       <div className="fetch-search-container">
@@ -33,15 +32,4 @@ const News = (props) => {
 };
 
 export default News;
-// const mapStateToProps = state => {
-//     return {
-//         articles: state.articles,
-//         isLoading: state.isLoading
-//     }
-// }
 
-// // const mapDispatchToProps = () => {
-// //     fetchNews()
-// // }
-
-// export default connect(mapStateToProps, {fetchNews})(News);
