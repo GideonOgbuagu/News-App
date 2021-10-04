@@ -92,8 +92,7 @@ const News = (props) => {
           >
             Health
           </Link>
-
-          {/* <Link
+          <Link
             to="/tech-news"
             className="nav-button"
             onClick={(e) => {
@@ -102,7 +101,7 @@ const News = (props) => {
             }}
           >
             NY Region
-          </Link> */}
+          </Link>
         </div>
         <div className="fetch-search-wrapper">
           <SearchNews searchChange={props.searchChange} news={props.news} />

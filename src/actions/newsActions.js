@@ -78,7 +78,7 @@ export const fetchSportsNews = () => (dispatch) => {
 
 export const fetchHealthNews = () => (dispatch) => {
   axios
-    .get("https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=2G8poiWZvBZNjMJq3KvCluPURvuEVJnY")
+    .get("https://api.nytimes.com/svc/topstories/v2/health.json?api-key=2G8poiWZvBZNjMJq3KvCluPURvuEVJnY")
     .then((res) => {
       dispatch({ type: FETCH_HEALTH_NEWS, payload: res.data.results });
     })

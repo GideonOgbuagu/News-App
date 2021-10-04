@@ -25,8 +25,7 @@
 }
 .nav-button {
   margin-top: 50px;
-  /* border: 1px solid black; */
-  height: 40px;
+  height: 35px;
   font-weight: 600;
   padding: 10px 10px;
   cursor: pointer;
@@ -34,12 +33,12 @@
   font-size: 1rem;
   font-weight: 700;
   opacity: 9;
+  transition: all 1s;
 }
-/* .button:hover {
-  background-color: rgb(53, 53, 53);
-  color: white;
-  font-weight: bold;
-} */
+.nav-button:hover {
+  /* text-decoration: underline; */
+  border-bottom: 1px solid gray;
+}
 
 .news-list {
   display: flex;
