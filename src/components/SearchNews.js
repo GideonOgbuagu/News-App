@@ -9,7 +9,7 @@ function SearchNews(props) {
 
   return (
     <form className="search-wrapper" onSubmit={handleSubmit}>
-      <input type="text" className="text-input" value={props.news} onChange={props.searchChange}></input>
+      <input type="text" className="text-input" value={props.search} onChange={props.searchChange}></input>
       <p className="search-button">Search News</p>
     </form>
   );

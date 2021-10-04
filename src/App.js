@@ -1,24 +1,27 @@
 import React, { useState } from "react";
+import News from "./components/News";
+import Home from "./components/Home";
 import "./App.css";
 import { connect } from "react-redux";
-import News from "./components/News";
+export const FETCH_HOME_NEWS = "FETCH_HOME_NEWS";
+
 
 function App(props) {
-  const [news, setNews] = useState("");
-  console.log(props, "Checking Props= App.js")
+  const [search, setSearch] = useState("");
 
-  const handleChange = (e) => {
-    setNews(e.target.value);
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
   };
 
   const filteredStories = props.stories.filter((story) => {
-    return story.title.toLowerCase().includes(news.toLowerCase());
+    return story.title.toLowerCase().includes(search.toLowerCase());
   });
 
   return (
     <div className="App">
       <h1 className="App-heading">New York Times News</h1>
-      <News stories={filteredStories} searchChange={handleChange} news={news}/>
+      <News stories={filteredStories} handleSearchChange={handleSearchChange} search={search}/>
+      <Home search={search} />
     </div>
   );
 }

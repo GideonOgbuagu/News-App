@@ -1,0 +1,50 @@
+.home-news-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.homecard {
+  width: 45%;
+  color: black;
+  margin-bottom: 40px
+}
+
+.home-link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.home-article-container {
+  font-family: 'Nunito', san-serif;
+  text-align: left;
+}
+
+.home-heading {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.7rem;
+  padding: 8px 0;
+}
+.home-author-container {
+  display: flex;
+}
+
+.home-author-container span {
+  font-size: 0.8rem;
+  margin-right: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.home-news-text {
+  text-align: left;
+}
+
+.home-news-text p {
+  font-size: 0.9rem;
+}
+
+
+

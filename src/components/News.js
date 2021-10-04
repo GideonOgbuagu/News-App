@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 import NewsCard from "./NewsCard";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -8,16 +9,17 @@ import SearchNews from "./SearchNews";
 
 const News = (props) => {
   // console.log(props, "Checking Props= News.js");
+  let history = useHistory()
   return (
     <div className="news-wrapper">
       <div className="fetch-search-container">
         <div className="fetch-wrapper">
           <Link
-            to="/home"
+            to=""
             className="nav-button"
             onClick={(e) => {
               e.preventDefault();
-              props.fetchHomeNews();
+              history.push("/")
             }}
           >
             Home
@@ -104,7 +106,7 @@ const News = (props) => {
           </Link>
         </div>
         <div className="fetch-search-wrapper">
-          <SearchNews searchChange={props.searchChange} news={props.news} />
+          <SearchNews searchChange={props.handleSearchChange} search={props.search} />
         </div>
       </div>
 
