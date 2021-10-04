@@ -2,12 +2,12 @@ import React from "react";
 import NewsCard from "./NewsCard";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchUsNews, fetchWorldNews, fetchScienceNews, fetchArtsNews, fetchHomeNews } from "../actions/newsActions";
+import { fetchHomeNews, fetchUsNews, fetchWorldNews, fetchScienceNews, fetchArtsNews, fetchSportsNews, fetchHealthNews, fetchFoodNews, fetchNyRegionNews } from "../actions/newsActions";
 import "./News.css";
 import SearchNews from "./SearchNews";
 
 const News = (props) => {
-  console.log(props, "Checking Props= News.js");
+  // console.log(props, "Checking Props= News.js");
   return (
     <div className="news-wrapper">
       <div className="fetch-search-container">
@@ -30,7 +30,7 @@ const News = (props) => {
               props.fetchUsNews();
             }}
           >
-            US 
+            US
           </Link>
           <Link
             to="/world-news"
@@ -41,16 +41,6 @@ const News = (props) => {
             }}
           >
             World
-          </Link>
-          <Link
-            to="/tech-news"
-            className="nav-button"
-            onClick={(e) => {
-              e.preventDefault();
-              props.fetchNews();
-            }}
-          >
-            Tech
           </Link>
           <Link
             to="/science-news"
@@ -72,6 +62,47 @@ const News = (props) => {
           >
             Arts
           </Link>
+          <Link
+            to="/health-news"
+            className="nav-button"
+            onClick={(e) => {
+              e.preventDefault();
+              props.fetchSportsNews();
+            }}
+          >
+            Sports
+          </Link>
+          <Link
+            to="/tech-news"
+            className="nav-button"
+            onClick={(e) => {
+              e.preventDefault();
+              props.fetchFoodNews();
+            }}
+          >
+            Food
+          </Link>
+          <Link
+            to="/tech-news"
+            className="nav-button"
+            onClick={(e) => {
+              e.preventDefault();
+              props.fetchHealthNews();
+            }}
+          >
+            Health
+          </Link>
+
+          {/* <Link
+            to="/tech-news"
+            className="nav-button"
+            onClick={(e) => {
+              e.preventDefault();
+              props.fetchNyRegionNews();
+            }}
+          >
+            NY Region
+          </Link> */}
         </div>
         <div className="fetch-search-wrapper">
           <SearchNews searchChange={props.searchChange} news={props.news} />
@@ -88,10 +119,14 @@ const News = (props) => {
 };
 
 const mapDispatchToProps = {
+  fetchHomeNews,
   fetchUsNews,
   fetchWorldNews,
   fetchScienceNews,
   fetchArtsNews,
-  fetchHomeNews,
+  fetchSportsNews,
+  fetchHealthNews,
+  fetchFoodNews,
+  fetchNyRegionNews,
 };
 export default connect(null, mapDispatchToProps)(News);

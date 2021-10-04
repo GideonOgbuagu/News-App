@@ -38,4 +38,4 @@ const mapStateToProps = (state) => {
 //   fetchHomeNews,
 // };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, null)(App);
